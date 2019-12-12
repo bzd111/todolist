@@ -1,0 +1,25 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.tuna.tsinghua.edu.cn/simple"
+verify_ssl = true
+
+[dev-packages]
+black = "*"
+django-debug-toolbar = "==1.6"
+django = "==2.2.1"
+django-cors-headers = "==2.5.3"
+djangorestframework = "==3.9.3"
+mysqlclient = "==1.4.2.post1"
+
+[packages]
+djangorestframework = "==3.9.3"
+mysqlclient = "==1.4.2.post1"
+django-cors-headers = "==2.5.3"
+gunicorn = "*"
+Django = "==2.2.1"
+
+[requires]
+python_version = "3.7"
+
+[pipenv]
+allow_prereleases = true
