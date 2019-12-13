@@ -1,4 +1,3 @@
 #!/bin/sh
 
-nginx -c /etc/nginx/nginx.conf -g "pid /run/nginx.pid;"
-gunicorn -w 4 todo.wsgi --access-logfile access.log --error-logfile error.log
+gunicorn -w 4 todo.wsgi --access-logfile access.log --error-logfile error.log -b 0.0.0.0:8000
