@@ -59,7 +59,7 @@ ROOT_URLCONF = "todo.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        "DIRS": [BASE_DIR / 'templates'],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -72,6 +72,9 @@ TEMPLATES = [
     }
 ]
 
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [BASE_DIR / 'static', '/var/www/static/']
+
 WSGI_APPLICATION = "todo.wsgi.application"
 
 # Database
@@ -80,7 +83,7 @@ WSGI_APPLICATION = "todo.wsgi.application"
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'mydatabase',
+        'NAME': 'db.sqlite3',
     }
 }
 
@@ -114,7 +117,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
-STATIC_ROOT = BASE_DIR / "static"
+# STATIC_ROOT = BASE_DIR / "static"
 STATIC_URL = "/static1/"
 
 CORS_ORIGIN_ALLOW_ALL = True
@@ -148,6 +151,7 @@ LOGGING = {
         }
     },
 }
+
 
 try:
     from local_settings import *  # noqa
